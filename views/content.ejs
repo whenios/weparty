@@ -1,0 +1,88 @@
+<% include head %>
+	<header>
+		<div class="nav">
+			<div class="nav_center">
+				<ul>
+					<li style="border:0;" id="liUsername"><%= user.name%></li>
+					<li id="liLogout"><a href="/logout" style="color:black">注销</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="master">
+			<p   class="logo"></p>
+			<div class="operators">
+				<button id="btnAddAct" class="btn btn-primary">点击添加活动</button>
+				<button id="btnReflash" class="btn btn-success">刷新现有事件</button>
+				<button id="btnLocate" class="btn btn-info">定位现在位置</button>
+			</div>
+		</div>
+	</header>
+	<section>
+        <div class="center">
+            <div class="intro"></div>
+			<div class="map_wrap">
+				<div class="right">
+					<div style="overflow:hidden;">
+                        <button class="submit" id="btnSearchLocate"></button>      
+						<input type="text" class="search" placeholder="请输入完整地址或公交/地铁站名" id="inputSearchLocate" autocomplete="off">		
+					</div>
+					<div id="divCurrentScreenAct">
+						<h1>附近的活动</h1>
+						<table>
+							<tbody>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="left">
+					<div id="mapTest">
+                </div>
+				</div>
+			</div>
+        </div>
+
+	</section>
+    <!-- Modal -->
+    <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h1 class="modal-title" id="myModalLabel">添加事件</h1>
+                </div>
+                <div class="modal-body">
+                    <p><button style="width: 100%" id="btnChooseLocate" class="btn btn-primary">点击在地图上选取地点</button></p>
+                    <form  id="formAddAct" class="form-horizontal">
+                        <p><input class="form-control" type="text" name="title" placeholder="标题"></p>
+                        <p><input class="form-control" type="text" name="content" placeholder="内容"></p>
+                        <p><input class="form-control" type="text" name="addrname" placeholder="地点详情"></p>
+                        <p><input class="form-control" type="text" name="num_people" placeholder="人数"></p>
+                        <p>标签</p>
+                        <p>
+
+                            <select class="form-control" name="tags">
+                                <option>DRINK</option>
+                                <option>EAT</option>
+                                <option>MOIVE</option>
+                                <option>PLAY</option>
+                            </select>
+                        </p>
+                        <p><input class="form-control" type="datetime-local" id="inputStime" name="start_time" placeholder="开始时间"></p>
+                        <p><input  class="form-control" type="datetime-local" id="inputEtime" name="end_time" placeholder="结束时间"></p>
+                        <p><input  class="form-control" type="text" name="longitude" placeholder="经度" readonly></p>
+                        <p><input  class="form-control" type="text" name="latitude" placeholder="纬度" readonly></p>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnCancleForm" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" id="btnPostForm" class="btn btn-primary">确认并提交</button>
+                </div>
+            </div>
+        </div>       
+    </div>
+    <script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+    <script src="/lib/bootstrap.min.js"></script>
+    <script src="/js/indexControl.js"></script>
+<% include footer%>
