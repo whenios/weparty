@@ -1,0 +1,3 @@
+test merge txt content
+
+test from master branch
