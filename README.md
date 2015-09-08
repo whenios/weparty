@@ -1,4 +1,4 @@
 weparty
 =======
 
-a LBS sociality project bash on nodejs server
+a LBS sociality project base on nodejs server
