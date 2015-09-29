@@ -1,4 +1,5 @@
 weparty
 =======
 
-a LBS sociality project base on nodejs server
+A LBS sociality project base on nodejs server
+
